@@ -1,0 +1,23 @@
+# Watchtower AI - Server Dependencies
+
+# Core server
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-dotenv>=1.0.0
+
+# Claude API
+anthropic>=0.40.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# Authentication
+PyJWT>=2.8.0
+passlib[bcrypt]>=1.7.0
+python-multipart>=0.0.9
+
+# Billing
+stripe>=7.0.0
+
+# Email validation
+pydantic[email]>=2.0.0

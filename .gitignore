@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build output
+frontend/dist/
+dist/
+build/
+release/
+*.exe
+
+# Environment
+.env
+*.db
+
+# IDE / Tools
+.vscode/
+.idea/
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+*.spec.bak
+agent/build/
+agent/dist/

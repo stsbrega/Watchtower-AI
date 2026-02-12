@@ -1,0 +1,16 @@
+{
+  "name": "watchtower-ai",
+  "version": "2.0.0",
+  "description": "Watchtower AI - Cloud Server + Local Agent",
+  "author": "Watchtower",
+  "license": "MIT",
+  "scripts": {
+    "build:frontend": "cd frontend && npm run build",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:server": "cd server && python -m uvicorn server:app --reload --host 127.0.0.1 --port 8765",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
