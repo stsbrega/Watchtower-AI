@@ -21,7 +21,7 @@ class ServerConfig:
     port: int = int(os.getenv("PORT", "8765"))
 
     # == Database ==
-    database_url: str = os.getenv("DATABASE_URL", "sqlite:///watchtower.db")
+    database_url: str = os.getenv("DATABASE_URL", "sqlite:////app/watchtower.db")
 
     # == JWT Auth ==
     jwt_secret_key: str = os.getenv("JWT_SECRET_KEY", "change-me-in-production")
@@ -41,11 +41,10 @@ class ServerConfig:
     action_delay: float = float(os.getenv("ACTION_DELAY", "0.5"))
 
     def validate(self):
-        errors = []
+        import logging
+        logger = logging.getLogger(__name__)
         if not self.anthropic_api_key:
-            errors.append("ANTHROPIC_API_KEY is required.")
-        if errors:
-            raise ValueError("\n".join(errors))
+            logger.warning("ANTHROPIC_API_KEY not set — Claude chat will not work until configured.")
         return self
 
     @property
