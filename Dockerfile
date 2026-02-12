@@ -29,5 +29,5 @@ ENV HOST=0.0.0.0
 
 EXPOSE 8765
 
-# Run the server
-CMD ["python", "-m", "uvicorn", "server.server:app", "--host", "0.0.0.0", "--port", "8765"]
+# Run the server (shell form so $PORT is expanded by Railway)
+CMD python -m uvicorn server.server:app --host 0.0.0.0 --port ${PORT:-8765}
